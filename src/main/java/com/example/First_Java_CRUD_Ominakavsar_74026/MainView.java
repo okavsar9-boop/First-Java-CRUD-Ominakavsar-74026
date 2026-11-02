@@ -17,7 +17,7 @@ public class MainView extends VerticalLayout {
     private final CustomerEditor editor;
     private final Grid<Customer> grid = new Grid<>(Customer.class);
     private final TextField filter = new TextField();
-    private final Button addNewBtn = new Button("New customer", VaadinIcon.PLUS.create());
+    private final Button addNewBtn = new Button("Add customer", VaadinIcon.PLUS.create());
 
     public MainView(CustomerRepository repo, CustomerEditor editor) {
         this.repo = repo;
@@ -27,7 +27,7 @@ public class MainView extends VerticalLayout {
 
         grid.setHeight("300px");
         grid.setColumns("id", "firstName", "lastName");
-        filter.setPlaceholder("Filter by last name");
+        filter.setPlaceholder("search for last name");
         filter.setValueChangeMode(ValueChangeMode.LAZY);
         filter.addValueChangeListener(e -> listCustomers(e.getValue()));
 
